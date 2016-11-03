@@ -16,6 +16,9 @@
   ],
   "dependencies": {
     "angular": "^1.5.8",
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "angular-ui-router": "^0.3.1",
+    "glyphicons": "^0.0.2",
+    "livereload-js": "livereload#^2.2.1"
   }
 }

@@ -16,11 +16,11 @@ gulp.task('watch', function() {
     gulp.watch(htmlSources, ['html']);
 });
 
-var paths = ['./bower_components/**/*.css','./*.js'];
+var paths = ['./bower_components/**/*.css','./app/**/*.js', './app/**/*.css'];
 
 gulp.task('injectables', function() {
     var sources = gulp.src(paths, {read: false});
-    return gulp.src('index.html')
+    return gulp.src('/app/index.html')
         .pipe(wiredep())
         .pipe(inject(sources))
         .pipe(gulp.dest('.'));
@@ -53,7 +53,7 @@ gulp.task('app', function(){
         uri: 'http://localhost:8080',
         app: 'Google Chrome'
     };
-    gulp.src('./index.html')
+    gulp.src('./app/index.html')
         .pipe(open(options));
 });
 

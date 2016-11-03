@@ -1,7 +1,7 @@
 
 // FUNCTION FOR EXERCISE ONE
 function solution(number){
-    var number = document.getElementById('exOneNumber').value; 
+    number = document.getElementById('exOneNumber').value; 
 
     if (number === null){
       alert('please enter a number first!');
@@ -20,13 +20,21 @@ function solution(number){
     console.log(lessThanNumber);
     console.log(newArray);
     
-    var sum = newArray.reduce(function(a, b){
+    sum = newArray.reduce(function(a, b){
       return a + b; 
     });
     console.log('sum = ' + sum);
-    document.getElementById("exerciseOneResult").innerHTML = 'There are ' + newArray.length + ' numbers less than ' + number + ' that are divisable by either 3 or 5. The sum of these numbers is ' + sum + '!';
-    
+    document.getElementById("exerciseOneResult").innerHTML = 
+    'There are <span class="number">' + newArray.length + 
+    '</span> numbers less than <span class="number">' + number + 
+    '</span> that are divisable by either 3 or 5. The sum of these numbers is <span class="number"> ' + sum + 
+    '</span>!';
 
     return sum;
   }
 }
+
+
+
+
+

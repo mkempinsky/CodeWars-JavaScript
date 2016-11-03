@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Code Wars</title>
+<!-- bower:css -->
+<link rel="stylesheet" href="../bower_components/glyphicons/styles/glyphicons.css" />
+<!-- endbower -->
+
+<!-- inject:css -->
+<link rel="stylesheet" href="/bower_components/angular/angular-csp.css">
+<link rel="stylesheet" href="/bower_components/glyphicons/styles/glyphicons.css">
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.css">
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/app/custom.css">
+<!-- endinject -->
+<link href="https://fonts.googleapis.com/css?family=Bungee+Hairline|Muli" rel="stylesheet">
+<link rel="stylesheet" href="/bower_components/glyphicons/styles/glyphicons.css">
+</head>
+
+<body>
+<div class="jumbotron">
+  <h1>Code Wars</h1>
+</div>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++ EXERCISE ONE ++++++++++++++++++++++++++++-->
+<div class="well">
+	<h2>Multiples of 3 and 5</h2>
+	<p class="objSol">Objective:</p>
+	<p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+	Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
+	<p></p>
+	Note: If the number is a multiple of both 3 and 5, only count it once.
+	<p></p>
+	Courtesy of ProjectEuler.net</p>
+
+	<p class="objSol">Solution:</p>
+
+	<div class="">
+	    <div class="input-group">
+	      <input type="number" class="form-control" id="exOneNumber" placeholder="enter a number">
+	      <span class="input-group-btn">
+	        <button class="btn runFunction-btn" onclick="solution()" type="button">Run Exercise One <span class="glyphicons glyphicons-calculator"></span></button>
+	      </span>
+	    </div>
+  	</div>
+  	<p id="exerciseOneResult"></p>
+
+	<!-- Button trigger modal -->
+	<button type="button" class="btn seeCode-btn" data-toggle="modal" data-target="#firstModal">
+	 	See Code
+	</button>
+	<!-- Modal -->
+	<div class="modal fade" id="firstModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Multiples of 3 and 5 Solution</h4>
+	      </div>
+	      <div class="modal-body solutionOne">
+	      	<img src="solutionImages/solutionOne.png" class="solutionImages">
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+</div>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++ EXERCISE TWO ++++++++++++++++++++++++++++-->
+<div class="well">
+	<h2>Take a Ten Minute Walk</h2>
+	<p class="objSol">Objective:</p>
+	<p>You live in the city of Cartesia where all roads are laid out in a perfect grid. You arrived ten minutes too early to an appointment, so you decided to take the opportunity to go for a short walk. The city provides its citizens with a Walk Generating App on their phones -- everytime you press the button it sends you an array of one-letter strings representing directions to walk (eg. ['n', 's', 'w', 'e']). You know it takes you one minute to traverse one city block, so create a function that will return true if the walk the app gives you will take you exactly ten minutes (you don't want to be early or late!) and will, of course, return you to your starting point. Return false otherwise.</p>
+
+	<p class="objSol">Solution:</p>
+
+	<div class="">
+	    <div class="input-group">
+	      <input type="number" class="form-control" id="exOneNumber" placeholder="enter a number">
+	      <span class="input-group-btn">
+	        <button class="btn" onclick="solution()" type="button">Run Exercise One <span class="glyphicons glyphicons-calculator"></span></button>
+	      </span>
+	    </div>
+  	</div>
+  	<p id="exerciseOneResult"></p>
+	
+</div>
+
+
+
+<!-- bower:js -->
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../bower_components/livereload-js/dist/livereload.js"></script>
+<!-- endbower -->
+<!-- inject:js -->
+<script src="/app/main.js"></script>
+<!-- endinject -->
+</body>
+</html></html>
