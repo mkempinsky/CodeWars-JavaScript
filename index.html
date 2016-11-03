@@ -2,14 +2,47 @@
 <html>
 <head>
 	<title>Code Wars</title>
+<!-- bower:css -->
+<!-- endbower -->
+
+<!-- inject:css -->
+<link rel="stylesheet" href="/bower_components/angular/angular-csp.css">
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.css">
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+<!-- endinject -->
 </head>
 <body>
-<h1>Code Wars Exercises</h1>
+<div class="jumbotron">
+  <h1>Code Wars</h1>
+</div>
 
-<input type="number">
-<button onClick="solution(10)">Run Exercise 1</button>
+<div class="well">
+	<h2>Multiples of 3 and 5</h2>
+	<p>Objective:</p>
+	<p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+	Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
+	<p></p>
+	Note: If the number is a multiple of both 3 and 5, only count it once.
+	Courtesy of ProjectEuler.net</p>
+	<input type="number" id="exOneNumber">
+	<button class="btn" onclick="solution()"> Run Exercise One </button>
+	<p>There are <span id="countLessThanNumber"></span> numbers less than <span id="number"></span> that are divisable by 3 or 5. The sum of these numbers is <span id="returnedSum"></span>!</p>
+</div>
 
 
 <script type="text/javascript" src="main.js"></script>
+
+<!-- bower:js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<!-- endbower -->
+<!-- inject:js -->
+<script src="/gulpfile.js"></script>
+<script src="/main.js"></script>
+<!-- endinject -->
 </body>
 </html></html>

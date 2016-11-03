@@ -1,0 +1,21 @@
+{
+  "name": "codeWars",
+  "homepage": "https://github.com/mkempinsky/CodeWars-JavaScript",
+  "authors": [
+    "Michele Kempinsky <mkempinsky@icloud.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7"
+  }
+}
