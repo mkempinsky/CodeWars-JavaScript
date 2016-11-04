@@ -44,6 +44,60 @@ function solution(number){
   
 }
 
+// FUNCTION FOR EXERCISE TWO
+function makeWalk(){
+    var walk = [];
+    var randomLength = Math.floor(Math.random() * 15) + 1;
+    console.log('random length = ' + randomLength);
+
+    for( var i= 0; i < randomLength; i++ ){
+      var j = Math.floor(Math.random() * 4) + 1;
+      console.log('j = ' + j);
+      if (j === 1){
+        walk.push('n');
+      } else if (j === 2){
+        walk.push('s');
+      } else if (j === 3){
+        walk.push('e');
+      } else if (j === 4){
+        walk.push('w');
+      }
+    }
+  console.log(walk);
+  return walk; 
+}
+function isValidWalk(newWalk) {
+  var counter = 0;
+  var results = true;
+  if(newWalk.length !== 10){
+     results = false;
+      return results;
+    } else {
+    for(var k = 0; k < newWalk.length; k++ ){
+        
+        if(newWalk[k] === 'n'){
+        counter++;
+          console.log(counter);
+        } else if(newWalk[k] === 's'){
+        counter--;
+          console.log(counter);
+        } else if(newWalk[k] === 'w'){
+        counter++;
+          console.log(counter);
+        } else if(newWalk[k] === 'e'){
+        counter--;
+          console.log(counter);
+        }
+    }
+  }
+  if(counter === 0){
+    console.log(counter);
+       return results;
+  } 
+  console.log('if your random array of directions is ' + newWalk + 'the result is ' );
+}
+
+
 
 
 
