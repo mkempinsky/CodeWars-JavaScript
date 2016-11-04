@@ -1,5 +1,7 @@
 
-// FUNCTION FOR EXERCISE ONE
+/* ------------------------------------------------------------/
+            FUNCTION FOR EXERCISE ONE
+ -----------------------------------------------------------*/
 function solution(number){
     // get the number from the user
     number = document.getElementById('exOneNumber').value; 
@@ -44,11 +46,21 @@ function solution(number){
   
 }
 
-// FUNCTION FOR EXERCISE TWO
-function makeWalk(){
-    var walk = [];
+/* ------------------------------------------------------------/
+            FUNCTION FOR EXERCISE TWO
+ -----------------------------------------------------------*/
+
+function isValidWalk(walk) {
+    // create an empty array to contain the walking directions
+    walk = [];
+    // generate a random number between 1 - 15, this will be the amount of directions pushed to the walk array
     var randomLength = Math.floor(Math.random() * 15) + 1;
     console.log('random length = ' + randomLength);
+
+    // create a for loop that runs through the 'randomLength' varialbe depending on how many directions are given
+    // each time the loop runs it generates a random number between 1-4
+    // assign each letter(ie. 'n' for north, 'e' for east) to a 1, 2, 3, or 4 depending on what the number is
+    // push each letter to the 'walk' array
 
     for( var i= 0; i < randomLength; i++ ){
       var j = Math.floor(Math.random() * 4) + 1;
@@ -63,39 +75,53 @@ function makeWalk(){
         walk.push('w');
       }
     }
-  console.log(walk);
-  return walk; 
-}
-function isValidWalk(newWalk) {
-  var counter = 0;
-  var results = true;
-  if(newWalk.length !== 10){
-     results = false;
-      return results;
-    } else {
-    for(var k = 0; k < newWalk.length; k++ ){
-        
-        if(newWalk[k] === 'n'){
-        counter++;
-          console.log(counter);
-        } else if(newWalk[k] === 's'){
-        counter--;
-          console.log(counter);
-        } else if(newWalk[k] === 'w'){
-        counter++;
-          console.log(counter);
-        } else if(newWalk[k] === 'e'){
-        counter--;
-          console.log(counter);
-        }
+    console.log(walk + '<--- this is the new walk');
+
+    // now that we have our random list of directions via our 'walk' array, we can test if it is a valid walk
+    // start a counter at 0
+    var counter = 0;
+    var results = true;
+    // check if the length of 'walk' array is 10. MUST be exactly 10. If it were greater than 10 you would be late
+    // if it were less than 10 you would be too early
+
+    if(walk.length !== 10){
+        // so this function should automatically return 'false' if the walk array length is not equal to 10
+       results = false;
+       console.log(results);
+        return results;
+      } else {
+        // now we want to test if that random list of directions will bring us back to the start or not
+      for(var k = 0; k < walk.length; k++ ){
+          // since we are working with a grid, each direction value is assigned a positive or negative of 1
+          // each block takes 1 minute to walk 
+          if(walk[k] === 'n'){
+            // 'n' or north will be +1
+          counter++;
+            console.log(counter);
+          } else if(walk[k] === 's'){
+            // 's' or south will be -1
+          counter--;
+            console.log(counter);
+          } else if(walk[k] === 'w'){
+            // 'w' or west will be +1
+          counter++;
+            console.log(counter);
+          } else if(walk[k] === 'e'){
+            // 'e' or east will be -1
+          counter--;
+            console.log(counter);
+          }
+      }
     }
-  }
-  if(counter === 0){
-    console.log(counter);
-       return results;
-  } 
-  console.log('if your random array of directions is ' + newWalk + 'the result is ' );
+    // if the counter is equal to 0 that means the directions have brought you back to where you started exactly 10min
+    if(counter === 0){
+      console.log(counter);
+      console.log(results);
+        // so we return the results of true! 
+         return results;
+    } 
 }
+
 
 
 
