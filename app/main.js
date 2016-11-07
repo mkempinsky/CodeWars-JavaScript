@@ -62,7 +62,7 @@ function isValidWalk(walk) {
     // create an empty array to contain the walking directions
     walk = [];
     // generate a random number between 1 - 15, this will be the amount of directions pushed to the walk array
-    var randomLength = Math.floor(Math.random() * 15) + 1;
+    var randomLength = Math.floor(Math.random() * 10) + 1;
     console.log('random length = ' + randomLength);
 
     // create a for loop that runs through the 'randomLength' varialbe depending on how many directions are given
@@ -72,7 +72,6 @@ function isValidWalk(walk) {
 
     for( var i= 0; i < randomLength; i++ ){
       var j = Math.floor(Math.random() * 4) + 1;
-      console.log('j = ' + j);
       if (j === 1){
         walk.push('n');
       } else if (j === 2){
@@ -83,11 +82,12 @@ function isValidWalk(walk) {
         walk.push('w');
       }
     }
-    console.log(walk + '<--- this is the new walk');
+    console.log('walk = ' + walk);
 
     // now that we have our random list of directions via our 'walk' array, we can test if it is a valid walk
     // start a counter at 0
-    var counter = 0;
+    var longitude = 0;
+    var latitude = 0;
     var results = true;
     // check if the length of 'walk' array is 10. MUST be exactly 10. If it were greater than 10 you would be late
     // if it were less than 10 you would be too early
@@ -96,6 +96,17 @@ function isValidWalk(walk) {
         // so this function should automatically return 'false' if the walk array length is not equal to 10
        results = false;
        console.log(results);
+       if(walk.length < 10){
+        document.getElementById("exerciseTwoResult").innerHTML = 
+        'The directions you were given are: <span class="number">' + walk + 
+        '</span>. The result is <span class="number">' + results + 
+        '</span> , you could not take this walk and be back in 10 minutes. You would return too <span class="number">early</span>!';
+      } else if(walk.length > 10){
+        document.getElementById("exerciseTwoResult").innerHTML = 
+        'The directions you were given are: <span class="number">' + walk + 
+        '</span>. The result is <span class="number">' + results + 
+        '</span> , you could not take this walk and be back in 10 minutes. You would return too <span class="number">late</span>!';
+       } 
         return results;
       } else {
         // now we want to test if that random list of directions will bring us back to the start or not
@@ -104,30 +115,54 @@ function isValidWalk(walk) {
           // each block takes 1 minute to walk 
           if(walk[k] === 'n'){
             // 'n' or north will be +1
-          counter++;
-            console.log(counter);
+          latitude++;
           } else if(walk[k] === 's'){
             // 's' or south will be -1
-          counter--;
-            console.log(counter);
+          latitude--;
           } else if(walk[k] === 'w'){
             // 'w' or west will be +1
-          counter++;
-            console.log(counter);
+          longitude++;
           } else if(walk[k] === 'e'){
             // 'e' or east will be -1
-          counter--;
-            console.log(counter);
-          }
+          longitude--;          }
       }
+      console.log(latitude);
+      console.log(longitude);
     }
     // if the counter is equal to 0 that means the directions have brought you back to where you started exactly 10min
-    if(counter === 0){
-      console.log(counter);
+    if(latitude === 0 & longitude === 0){
       console.log(results);
         // so we return the results of true! 
+        document.getElementById("exerciseTwoResult").innerHTML = 
+        'The directions you were given are: <span class="number">' + walk + 
+        '</span>. The result is <span class="number">' + results + 
+        '</span> , you could take this walk and be back in exactly 10 minutes!';
          return results;
     } 
+    
+
+}
+
+
+/* ------------------------------------------------------------/
+            FUNCTION FOR EXERCISE THREE
+ -----------------------------------------------------------*/
+function filter_list() {
+  var l = [1,2,'a','b'];
+  console.log('starting array = ' + l)
+  var noStrings = [];
+  var strings = [];
+  for(var i = 0; i <= l.length; i++){
+    if (typeof l[i] === 'number'){
+      console.log(typeof i);
+      noStrings.push(l[i]);
+    } else if(typeof l[i] === 'string'){
+      strings.push(l[i]);
+    }
+    console.log(noStrings);
+    console.log(strings);
+  }
+  return noStrings;
 }
 
 
